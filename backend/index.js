@@ -240,7 +240,7 @@ async function startvote(req, res) {
 
             // Save the message to MongoDB
             try {
-                const log = new DebugLog({ body: jsonResponse.toString() });
+                const log = new DebugLog({ body: JSON.stringify(jsonResponse)});
                 await log.save();
                 console.log('api response saved to database');
             } catch (error) {
