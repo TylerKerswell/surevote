@@ -19,7 +19,7 @@ document.querySelector(".submit").addEventListener("click", async function (e) {
     });
 
 
-    const result = await response.json(); 
+    const result = await response
     console.log(result);
     
     
