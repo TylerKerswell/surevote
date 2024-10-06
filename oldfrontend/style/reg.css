@@ -1,0 +1,67 @@
+.title{
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #55c173;
+}
+
+.span{
+    color: red;
+}
+
+
+.text{
+    resize: none;
+}
+.submit {
+    border-radius: 100px;
+    background-color: #55c173;
+    width: 340px;
+    height: 50px;
+    color: white;
+    outline: none; 
+    padding: 0;
+    border: none;
+    font-size: 25px;
+    cursor:pointer;
+}
+.registration-form {
+    margin-left: 15vw;
+    margin-top: 15vh;
+    width: 35vw;
+    height: 1000px;
+    min-height: 2.3em;
+    min-width: 700px;
+}
+.image-photoroom-1-icon {
+    position: absolute;
+    top: 171px;
+    left: 783px;
+    width: 545px;
+    height: 585px;
+    object-fit: cover;
+}
+.registration-page {
+    width: 100%;
+    position: relative;
+    background-color: #e5f0d4;
+    height: 100vh;
+    overflow: hidden;
+    text-align: left;
+    font-size: 20px;
+    color: #2d2d2d;
+    font-family: Inter;
+    
+}
+
+body{
+    margin:0px;
+}
+
+input {
+    min-width: 300px;
+    margin: 7px;
+    padding: 2px;
+    width: 30vw;
+    height: 30px;
+    border: 1px solid green;
+}

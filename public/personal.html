@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="./style/personal.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  	
+  	
+  	
+</head>
+<body>
+  	
+  	<div class="personalinfo">
+    		<div class="dashboardnavbar">
+                <!-- <a href= "./home.html"  class ="elections button">Home</a>
+      			<a href= "./calendar.html"  class ="contact button">Elections</a>
+        				<a class="personal-info">Profile</a>
+      			<div class="votebutton">
+        				<div class="votebutton-child">
+        				</div>
+        				<div class="register">Register</div>
+      			</div> -->
+
+                  <div class="header">    
+                    <div class="topmain">
+                          <div class="loginbutton">
+                                <div class="loginbutton-child">
+                                    <a href= "./login.html"  class ="login">Login</a>
+                                </div>
+                                
+                          </div>
+                          <a href = "./personal.html" class="personal-info button">Profile</a>
+                          <a href="./home.html" class="about button">Home</a>
+                          <a href= "./calendar.html"  class ="contact button">Elections</a>
+                    </div>
+                      
+              </div>
+    		</div>
+    		<div class="profile">
+      			<div class="profile-pic-1-wrapper">
+        				<div class="profile-pic-1">
+        				</div>
+      			</div>
+      			<div class="personalinfo1">
+        				<div class="ted-rogers">Ted Rogers</div>
+        				<div class="div">19</div>
+        				<div class="xyz-street-no">XYZ, Street No. 92, City, Country, Postal Code</div>
+        				<div class="div1" data-scroll-to="text">+1 437 230 7313</div>
+        				<div class="johndoegmailcom">john.doe@gmail.com</div>
+        				<div class="true">True</div>
+        				<div class="true1">True</div>
+        				<div class="name">Name:</div>
+        				<div class="age">Age:</div>
+        				<div class="email">Email:</div>
+        				<div class="address">Address</div>
+        				<div class="eligible">Eligible:</div>
+        				<div class="verified">Verified:</div>
+        				<div class="mobile-number" id="mobileNumberText">Mobile Number:</div>
+      			</div>
+    		</div>
+    		<div class="personalinfo-child">
+    		</div>
+    		<b class="change-profile-picture">Change profile picture</b>
+    		<img class="vector-icon" alt="" src="Vector.svg">
+    		
+    		<div class="edit-profile">Edit Profile</div>
+    		<img class="image-3-icon" alt="" src="image 3.png">
+    		
+  	</div>
+  	
+  	
+  	
+  	
+  	<script>
+    		var mobileNumberText = document.getElementById("mobileNumberText");
+    		if(mobileNumberText) {
+      			mobileNumberText.addEventListener("click", function () {
+        				var anchor = document.querySelector("[data-scroll-to='text']");
+        				if(anchor) {
+          					anchor.scrollIntoView({"block":"start","behavior":"smooth"}) }
+      			});
+    		}
+  	</script></body>
+</html>

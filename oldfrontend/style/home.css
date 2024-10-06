@@ -80,15 +80,6 @@
     height: 248px;
     font-size: 100px;
 }
-
-.personal-info {
-    position: absolute;
-    top: 7px;
-    left: 0px;
-    right: 410px;
-    color:black;
-}
-
 .simplified1 {
     position: absolute;
     top: 365px;
@@ -114,7 +105,7 @@
 .loginbutton-child {
     position: absolute;
     top: 0px;
-    left: 100px;
+    left: 0px;
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
     border-radius: 100px;
     background-color: #55c173;
@@ -144,12 +135,11 @@
     display: inline-block;
     width: 79px;
     height: 30px;
-    color: black;
 }
 .contact {
     position: absolute;
     top: 7px;
-    left: 210px;
+    left: calc(50% - 69.5px);
     display: inline-block;
     width: 99px;
     height: 34px;
@@ -158,8 +148,8 @@
 .topmain {
     position: absolute;
     top: 60px;
-    left: 950px;
-    width: 700px;
+    left: 1023px;
+    width: 357px;
     height: 45px;
 }
 .turn-hours-of {
