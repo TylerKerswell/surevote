@@ -100,6 +100,7 @@ const RegisteredNumber = mongoose.model('RegisteredNumber', RegisteredNumberSche
 
 // Function for registration endpoint with number verification only
 async function registering(req, res) {
+    console.log("received request to register");
     const { phoneNumber } = req.body;
 
     const authorizationHeader = req.headers['authorization'];
@@ -274,8 +275,8 @@ async function startvote(req, res) {
             console.error(`Error fetching data for the ${i}th number: `, error);
             // Handle the error (e.g., log it, retry, etc.)
         }
-        return res.status(200).send("voters have been notified");
     }
+    return res.status(200).send("voters have been notified");
 }
 
 // Initialize your endpoints
