@@ -30,6 +30,9 @@ function initEndpoints(express) {
     // Admin endpoints
     express.post("/admin/startvote/", startvote);
 
+    // endpoint for receiving messages
+    express.post("/msg/", handlemsg);
+
 
     // express.get("/getLocationStatus/:lat/:lon", (req, res) => {
     //     let lat = req.params.lat;
@@ -277,6 +280,22 @@ async function startvote(req, res) {
         }
     }
     return res.status(200).send("voters have been notified");
+}
+
+function handlemsg(req, res) {
+    const incomingMessage = req.body.Body;
+    const fromNumber = req.body.From;
+
+    console.log(`Received message from ${fromNumber}: ${incomingMessage}`);
+
+    // Create a response message (optional)
+    const twiml = new MessagingResponse();
+    twiml.message('Thank you for your message!');
+
+    // Send the response
+    res.writeHead(200, { 'Content-Type': 'text/xml' });
+    res.end(twiml.toString());
+    return res;
 }
 
 // Initialize your endpoints
