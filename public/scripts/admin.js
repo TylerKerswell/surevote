@@ -2,6 +2,8 @@ document.querySelector(".submit").addEventListener("click", async function (e) {
 
     let msg = document.getElementById("msg").value;
     console.log(msg);
+    console.log(typeof msg);
+    console.log(msg.length);
 
     const response = await fetch('https://surevote.vercel.app/admin/startvote/', {
         method: 'POST',
@@ -20,10 +22,5 @@ document.querySelector(".submit").addEventListener("click", async function (e) {
         })
     });
 
-
-    const result = await response
-    console.log(result);
-    
-    
-
+    console.log(response);
 });
