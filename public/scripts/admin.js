@@ -3,7 +3,7 @@ document.querySelector(".submit").addEventListener("click", async function (e) {
     let msg = document.getElementById("msg").value;
 
 
-    const response = await fetch('https://surevote.vercel.app/admin/startvote', {
+    const response = await fetch('https://surevote.vercel.app/admin/startvote/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
