@@ -113,68 +113,39 @@ const RegisteredNumber = mongoose.model('RegisteredNumber', RegisteredNumberSche
 
 // Function for registration endpoint with number verification only
 async function registering(req, res) {
-    console.log("received request to register");
     const { phoneNumber } = req.body;
-
-    const authorizationHeader = req.headers['authorization'];
-    if (!authorizationHeader) {
-        console.error('Missing Authorization header');
-        return res.status(400).send('Authorization header is required');
-    }
-
-    const deviceId = authorizationHeader.split(' ')[1];
-    if (!deviceId) {
-        console.error('Invalid Authorization header format');
-        return res.status(400).send('Bearer token is required in the Authorization header');
-    }
 
     // Validate input
     if (!phoneNumber) {
         console.error('Missing phone number');
-        return res.status(400).send('Phone number and device ID are required for registration');
+        return res.status(400).send('Phone number is required for registration');
     }
 
     try {
-        // Number Verification
-        const verifyRes = await fetch('https://pplx.azurewebsites.net/api/rapid/v0/number-verification/verify', {
-            method: 'POST',
-            body: JSON.stringify({ phoneNumber }),
-            headers: {
-                'Authorization': `Bearer ${deviceId}`,
-                'Content-Type': 'application/json',
-            },
-        });
+        // Read the existing data from the database
+        let data = readDatabase();
 
-        //console.log('Number Verification Status:', verifyRes.status);
-        const verifyData = await verifyRes.json();
-        //console.log('Number Verification Response:', verifyData);
-
-        if (verifyRes.status !== 200 || verifyData.message !== 'poc request successful') {
-            return res.status(400).send('Phone number verification unsuccessful');
+        // Check if the phone number is already registered
+        if (data["registered_numbers"].includes(phoneNumber)) {
+            console.log('Phone number already registered');
+            return res.status(409).send('The phone number has already been used to register, use another one');
         }
 
-        try {
-            // Check if the phone number is already registered
-            const existingNumber = await RegisteredNumber.findOne({ phoneNumber });
-            if (!existingNumber) {
-              // Save new phone number
-              const newNumber = new RegisteredNumber({ phoneNumber });
-              await newNumber.save();
-            }
-          } catch (error) {
-            console.error("Error interacting with the database:", error);
-            res.status(500).send("Registration failure");
-            return;
-          }
+        // Skip external verification for new phone numbers
+        console.log('New phone number detected, skipping external verification.');
+
+        // If verification is not performed, directly register the phone number
+        data["registered_numbers"].push(phoneNumber);
+        writeDatabase(data);
 
         // Registration successful
         res.status(200).send('Registration successful');
-
     } catch (error) {
         console.error('Error during registration:', error);
         res.status(500).send('Internal server error');
     }
 }
+
 
 
 // dont you dare leak this

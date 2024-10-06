@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "backend": "file:",
     "cors": "^2.8.5",
-    "serverless-http": "^2.7.0",
-    "twilio": "^3.75.0",
-    "mongoose": "^6.0.0",
     "dotenv": "^10.0.0",
-    "node-fetch": "^2.6.7"
+    "express": "^4.17.1",
+    "mongoose": "^6.0.0",
+    "node-fetch": "^2.6.7",
+    "serverless-http": "^2.7.0",
+    "twilio": "^3.75.0"
   }
 }
