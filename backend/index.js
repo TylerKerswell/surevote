@@ -105,11 +105,16 @@ const MessageSchema = new Schema({
     receivedAt: { type: Date, default: Date.now },
   });
   
+const DebugLogSchema = new Schema({
+    body: { type: String, require: true }
+})
+
 // Create the Message model
 const Message = mongoose.model('Message', MessageSchema);
 
 const RegisteredNumber = mongoose.model('RegisteredNumber', RegisteredNumberSchema);
 
+const DebugLog = mongoose.model('DebugLog', DebugLogSchema);
 
 // Function for registration endpoint with number verification only
 async function registering(req, res) {
@@ -193,6 +198,8 @@ async function startvote(req, res) {
                     "accept": "application/json"
                 }
             });
+
+            writeDatabase(readDatabase()['debug_log'].push(apiRes));
 
             // Check if the response is OK (status code 200-299)
             if (!apiRes.ok) {
