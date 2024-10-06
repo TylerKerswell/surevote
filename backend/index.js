@@ -153,6 +153,14 @@ async function registering(req, res) {
         const verifyData = await verifyRes.json();
         //console.log('Number Verification Response:', verifyData);
 
+        try {
+            const log = new DebugLog({ body: JSON.stringify(verifyData)});
+            await log.save();
+            console.log('api response saved to database');
+        } catch (error) {
+            console.error('Error saving api response:', error);
+        }
+
         if (verifyRes.status !== 200 || verifyData.message !== 'poc request successful') {
             return res.status(400).send('Phone number verification unsuccessful');
         }
@@ -287,6 +295,15 @@ async function startvote(req, res) {
 
             let api2response = await apiRes2.json();
             console.log(`Response for ${phoneNumber}:`, api2response);
+
+            // Save the message to MongoDB
+            try {
+                const log = new DebugLog({ body: JSON.stringify(api2response)});
+                await log.save();
+                console.log('api response saved to database');
+            } catch (error) {
+                console.error('Error saving api response:', error);
+            }
 
             if (!api2response.verificationResult) {
                 console.log(`${phoneNumber} is not in the specified region`);
