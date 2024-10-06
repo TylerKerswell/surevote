@@ -13,7 +13,7 @@ document.querySelector(".submit").addEventListener("click", async function (e) {
             "lat": "49.266910", 
             "lon": "-123.247415", 
             "accuracy": "100", 
-            "ballot_message": `${msg}`,
+            "ballot_message": `${msg}`
         })
     });
 
