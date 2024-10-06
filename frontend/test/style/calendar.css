@@ -1,0 +1,206 @@
+.votingpanel-child {
+    position: absolute;
+    top: 273px;
+    left: 178px;
+    background-color: #fff;
+    width: 1077px;
+    height: 293px;
+}
+.party-conservative {
+    position: absolute;
+    top: 330px;
+    left: 877px;
+}
+.pierre-poilievre {
+    position: absolute;
+    top: 330px;
+    left: 266px;
+}
+.party-liberal {
+    position: absolute;
+    top: 409px;
+    left: 877px;
+}
+.justin-trudeau {
+    position: absolute;
+    top: 409px;
+    left: 266px;
+}
+.party-ndp {
+    position: absolute;
+    top: 488px;
+    left: 877px;
+}
+.jagmeet-singh {
+    position: absolute;
+    top: 488px;
+    left: 266px;
+}
+.votingpanel-item {
+    position: absolute;
+    top: 159px;
+    left: 142px;
+    border-radius: 100px;
+    background-color: #55c173;
+    border: 5px solid #015fc7;
+    box-sizing: border-box;
+    width: 1156px;
+    height: 122px;
+}
+.sept-20- {
+    position: absolute;
+    top: 202px;
+    left: 712px;
+    color: #fff;
+    white-space: pre-wrap;
+}
+.votingpanel-inner {
+    position: absolute;
+    top: 620px;
+    left: 142px;
+    border-radius: 100px;
+    background-color: #fff;
+    width: 1156px;
+    height: 122px;
+}
+.rectangle-div {
+    position: absolute;
+    top: 791px;
+    left: 142px;
+    border-radius: 100px;
+    background-color: #fff;
+    width: 1156px;
+    height: 122px;
+}
+.ellipse-div {
+    position: absolute;
+    top: 192px;
+    left: 173px;
+    border-radius: 50%;
+    background-color: #015fc7;
+    border: 3px solid #0a89ff;
+    box-sizing: border-box;
+    width: 56px;
+    height: 56px;
+}
+.votingpanel-child1 {
+    position: absolute;
+    top: 652px;
+    left: 173px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid #0a89ff;
+    box-sizing: border-box;
+    width: 56px;
+    height: 56px;
+}
+.votingpanel-child2 {
+    position: absolute;
+    top: 827px;
+    left: 173px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid #0a89ff;
+    box-sizing: border-box;
+    width: 56px;
+    height: 56px;
+}
+.federal-elections {
+    position: absolute;
+    top: 202px;
+    left: 266px;
+    color: #fff;
+}
+.oct-8- {
+    position: absolute;
+    top: 837px;
+    left: 712px;
+    color: #2d2d2d;
+    white-space: pre-wrap;
+}
+.municipal-elections {
+    position: absolute;
+    top: 837px;
+    left: 266px;
+    color: #2d2d2d;
+}
+.nov-15- {
+    position: absolute;
+    top: 662px;
+    left: 712px;
+    color: #2d2d2d;
+    white-space: pre-wrap;
+}
+.provincial-elections {
+    position: absolute;
+    top: 662px;
+    left: 266px;
+    color: #2d2d2d;
+}
+.akar-iconshand {
+    position: absolute;
+    top: 800px;
+    left: 978px;
+    width: 103px;
+    height: 103px;
+    overflow: hidden;
+}
+.elections-polling {
+    position: absolute;
+    top: 60px;
+    left: 140px;
+    font-size: 40px;
+    font-weight: 600;
+    color: #55c173;
+}
+.vector-icon {
+    position: absolute;
+    height: 3.63%;
+    width: 2.06%;
+    top: 19.14%;
+    right: 13.57%;
+    bottom: 77.23%;
+    left: 84.38%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.vector-icon1 {
+    position: absolute;
+    height: 2.25%;
+    width: 3.33%;
+    top: 81.25%;
+    right: 12.92%;
+    bottom: 16.5%;
+    left: 83.75%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.vector-icon2 {
+    position: absolute;
+    height: 2.25%;
+    width: 3.33%;
+    top: 64.27%;
+    right: 12.92%;
+    bottom: 33.49%;
+    left: 83.75%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.votingpanel {
+    width: 100%;
+    position: relative;
+    background-color: #e5f0d4;
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 30px;
+    color: #000;
+    font-family: Inter;
+}
+
+body{
+    margin: 0px;
+}

@@ -1,0 +1,87 @@
+.vote-anywhere-anytime-container {
+    /* position: absolute; */
+    display: flex;
+    flex-direction: row;
+    top: 0px;
+    left: 0px;
+
+}
+.dashiconsscreenoptions {
+    position: absolute;
+    top: 281px;
+    left: 5px;
+    width: 94px;
+    height: 94px;
+    overflow: hidden;
+}
+.register-yourself-by-providing {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    padding-left: 33px;
+}
+.ant-designlogin-outlined {
+    position: absolute;
+    top: 148px;
+    left: 6px;
+    width: 93px;
+    height: 93px;
+    overflow: hidden;
+}
+.receive-a-sms-container {
+    position: absolute;
+    top: 133px;
+    left: 2px;
+}
+.respond-to-cast-container {
+    position: absolute;
+    top: 266px;
+    left: 2px;
+}
+.fa-solidvote-yea {
+    position: absolute;
+    top: 544px;
+    left: 0px;
+    width: 116px;
+    height: 93px;
+    overflow: hidden;
+}
+.steps1 {
+    position: absolute;
+    top: 190px;
+    left: 75px;
+    width: 731px;
+    height: 637px;
+    font-size: 25px;
+    color: #2d2d2d;
+}
+.vote-anywhere-anytime-parent {
+    position: absolute;
+    top: 87px;
+    left: 107px;
+    width: 1164px;
+    height: 827px;
+}
+.image-2-icon {
+    position: absolute;
+    top: 543px;
+    left: 484px;
+    width: 906px;
+    height: 424px;
+    object-fit: cover;
+}
+.steps {
+    width: 100%;
+    position: relative;
+    background-color: #e5f0d4;
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 100px;
+    color: #55c173;
+    font-family: Inter;
+}
+
+body{
+    margin: 0px;
+}
