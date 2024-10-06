@@ -19,17 +19,14 @@ document.querySelector(".submit").addEventListener("click", async function (e) {
 
     try {
         // Send registration data to the backend
-        const response = await fetch('http://localhost:3000/register/', {
+        const response = await fetch('https://surevote.vercel.app/register/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer 166b4a', // Replace with your actual token if necessary
             },
             body: JSON.stringify({
-                phoneNumber: phoneNumber,
-                name: name,
-                dob: dob,
-                address: address
+                "phoneNumber": phoneNumber
             })
         });
 
