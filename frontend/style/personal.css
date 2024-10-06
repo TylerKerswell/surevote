@@ -1,0 +1,310 @@
+.elections {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    right: 10px;
+}
+.contact {
+    position: absolute;
+    top: 10px;
+    /* left: 150px; */
+}
+.personal-info {
+    position: absolute;
+    top: 7px;
+    left: 110px;
+    /* right:1px; */
+}
+
+/* .personal-info-parent {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    width: 120px;
+    height: 48.5px;
+} */
+
+.header {
+    /* width: 100%; */
+    /* position: relative; */
+    background: radial-gradient(50% 50% at 50% 50%, rgba(229, 240, 212, 0.3), #e5f0d4);
+    height: 1024px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 25px;
+    color: #2d2d2d;
+    font-family: Inter;
+}
+.loginbutton-child {
+    position: absolute;
+    top: 0px;
+    left: 330px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    background-color: #55c173;
+    width: 119px;
+    height: 45px;
+}
+.login {
+    position: absolute;
+    top: 7px;
+    left: 25px;
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    color:white;
+    text-decoration: none;
+}
+
+.about {
+    position: absolute;
+    top: 7px;
+    left: 0px;
+    display: inline-block;
+    width: 79px;
+    height: 30px;
+    color: black;
+}
+.contact {
+    position: absolute;
+    top: 7px;
+    left: 210px;
+    display: inline-block;
+    width: 99px;
+    height: 34px;
+    color: black;
+}
+.topmain {
+    position: absolute;
+    top: 10px;
+    left: 237px;
+    width: 700px;
+    height: 45px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.button{
+    color: black;
+    text-decoration: none;
+
+}
+
+.votebutton-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 100px;
+    background-color: #55c173;
+    width: 140px;
+    height: 50px;
+}
+.register {
+    position: absolute;
+    top: 10px;
+    left: 21px;
+}
+.votebutton {
+    position: absolute;
+    top: 0px;
+    left: 528px;
+    width: 140px;
+    height: 50px;
+    color: #fff;
+}
+.dashboardnavbar {
+    position: absolute;
+    top: 49px;
+    left: 710px;
+    width: 668px;
+    height: 58.5px;
+}
+.profile-pic-1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 285px;
+    height: 276px;
+    overflow: hidden;
+}
+.profile-pic-1-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 61px;
+    width: 285px;
+    height: 276px;
+}
+.ted-rogers {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+}
+.div {
+    position: absolute;
+    top: 19px;
+    left: 305px;
+}
+.xyz-street-no {
+    position: absolute;
+    top: 292px;
+    left: 0px;
+}
+.div1 {
+    position: absolute;
+    top: 110px;
+    left: 0px;
+}
+.johndoegmailcom {
+    position: absolute;
+    top: 201px;
+    left: 0px;
+}
+.true {
+    position: absolute;
+    top: 382px;
+    left: 0px;
+}
+.true1 {
+    position: absolute;
+    top: 382px;
+    left: 309px;
+}
+.name {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #55c173;
+}
+.age {
+    position: absolute;
+    top: 0px;
+    left: 305px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #55c173;
+}
+.email {
+    position: absolute;
+    top: 181px;
+    left: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #55c173;
+}
+.address {
+    position: absolute;
+    top: 272px;
+    left: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #55c173;
+}
+.eligible {
+    position: absolute;
+    top: 363px;
+    left: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #55c173;
+}
+.verified {
+    position: absolute;
+    top: 364px;
+    left: 305px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #55c173;
+}
+.mobile-number {
+    position: absolute;
+    top: 91px;
+    left: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #55c173;
+    cursor: pointer;
+}
+.personalinfo1 {
+    position: absolute;
+    top: 48px;
+    left: 0px;
+    width: 563px;
+    height: 410px;
+}
+.profile {
+    position: absolute;
+    top: 289px;
+    left: 147px;
+    width: 563px;
+    height: 458px;
+    font-size: 23px;
+}
+.personalinfo-child {
+    position: absolute;
+    top: 641px;
+    left: 976px;
+    border-radius: 100px;
+    background-color: #55c173;
+    width: 282px;
+    height: 50px;
+}
+.change-profile-picture {
+    position: absolute;
+    top: 653px;
+    left: 1020px;
+    font-size: 18px;
+    color: #fff;
+}
+.vector-icon {
+    position: absolute;
+    height: 2.64%;
+    width: 1.88%;
+    top: 69.24%;
+    right: 25.35%;
+    bottom: 28.13%;
+    left: 72.78%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.edit-profile {
+    position: absolute;
+    top: 711px;
+    left: 1065px;
+    font-size: 20px;
+}
+.image-3-icon {
+    position: absolute;
+    top: 339px;
+    left: 977px;
+    border-radius: 102px;
+    width: 281px;
+    height: 267px;
+    object-fit: cover;
+}
+.personalinfo {
+    width: 100%;
+    position: relative;
+    background-color: #e5f0d4;
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 25px;
+    color: #2d2d2d;
+    font-family: Inter;
+}
+
+body{
+    margin: 0px;
+}

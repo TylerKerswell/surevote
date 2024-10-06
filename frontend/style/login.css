@@ -1,0 +1,105 @@
+.login {
+    position: absolute;
+    top: 0px;
+    left: 117px;
+    font-size: 48px;
+    font-weight: 600;
+    color: #55c173;
+}
+.email-or-mobile {
+    position: absolute;
+    top: 95px;
+    left: 2px;
+}
+.password {
+    position: absolute;
+    top: 176px;
+    left: 0px;
+}
+.forgot-password {
+    position: absolute;
+    top: 351px;
+    left: 97px;
+    color: #499ffe;
+}
+.create-account {
+    position: absolute;
+    top: 390px;
+    left: 107px;
+    color: #499ffe;
+}
+.group-child {
+    position: absolute;
+    top: 122px;
+    left: 2px;
+    background-color: #fff;
+    width: 361px;
+    height: 43px;
+}
+.group-item {
+    position: absolute;
+    top: 202px;
+    left: 2px;
+    background-color: #fff;
+    width: 361px;
+    height: 43px;
+}
+.group-inner {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 100px;
+    background-color: #55c173;
+    width: 361px;
+    height: 50px;
+}
+.login1 {
+    position: absolute;
+    top: 8px;
+    left: 146px;
+    display: flex;
+    align-items: center;
+    width: 70px;
+    height: 34px;
+}
+.rectangle-parent {
+    position: absolute;
+    top: 282px;
+    left: 0px;
+    width: 361px;
+    height: 50px;
+    color: #fff;
+}
+.login-parent {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 363px;
+    height: 414px;
+}
+.loginform {
+    position: absolute;
+    top: 306px;
+    left: 538px;
+    width: 363px;
+    height: 414px;
+}
+.login-page {
+    width: 100%;
+    position: relative;
+    background-color: #e5f0d4;
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 20px;
+    color: #2d2d2d;
+    font-family: Inter;
+}
+
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+
+
