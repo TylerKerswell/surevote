@@ -5,7 +5,7 @@ require('dotenv').config();
 function initEndpoints(express) {
     // Temp test
     express.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, '../public/home.html'));
+        res.sendFile(path.join(process.cwd(), 'public', 'home.html'));
     });
     // Frontend app makes request to our /getLocationStatus endpoint, and we request from given API
 
@@ -68,6 +68,24 @@ function initEndpoints(express) {
     // });
 }
 
+const mongoose = require('mongoose');
+
+// Replace with your MongoDB connection string
+const uri = process.env.MONGODB_URI;
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
+  const Schema = mongoose.Schema;
+
+const RegisteredNumberSchema = new Schema({
+  phoneNumber: String,
+});
+
+const RegisteredNumber = mongoose.model('RegisteredNumber', RegisteredNumberSchema);
+
+
 // Function for registration endpoint with number verification only
 async function registering(req, res) {
     const { phoneNumber } = req.body;
@@ -110,15 +128,18 @@ async function registering(req, res) {
         }
 
         try {
-            data = readDatabase();
-            if (!data["registered_numbers"].includes(phoneNumber)) {
-                data["registered_numbers"].push(phoneNumber);
-                writeDatabase(data);
+            // Check if the phone number is already registered
+            const existingNumber = await RegisteredNumber.findOne({ phoneNumber });
+            if (!existingNumber) {
+              // Save new phone number
+              const newNumber = new RegisteredNumber({ phoneNumber });
+              await newNumber.save();
             }
-        } catch (error) {
-            console.log("error writing to database: ", error);
+          } catch (error) {
+            console.error("Error interacting with the database:", error);
             res.status(500).send("Registration failure");
-        }
+            return;
+          }
 
         // Registration successful
         res.status(200).send('Registration successful');
@@ -145,7 +166,17 @@ async function startvote(req, res) {
         console.log("could not parse sim_swap_date");
         return res.status(300).send("could not process sim swap date");
     }
-    let phone_nums = readDatabase()["registered_numbers"];
+    // Fetch registered phone numbers from MongoDB
+    let registeredNumbers;
+    try {
+    registeredNumbers = await RegisteredNumber.find({});
+    } catch (error) {
+    console.error('Error fetching registered numbers:', error);
+    return res.status(500).send('Internal server error');
+    }
+
+    // Extract the phone numbers into an array
+    let phone_nums = registeredNumbers.map(doc => doc.phoneNumber);
 
     // go through the list of numbers, 
     for (let i = 0; i < phone_nums.length; i++) {
@@ -251,25 +282,5 @@ function getvoters(req, res) {
 
 
 const dbPath = path.join(__dirname, 'database.json');
-
-// Function to read data from the JSON file
-function readDatabase() {
-    try {
-        const data = fs.readFileSync(dbPath, 'utf8');
-        return JSON.parse(data);
-    } catch (err) {
-        console.error('Error reading database:', err);
-        return {};
-    }
-}
-
-// Function to write data to the JSON file
-function writeDatabase(data) {
-    try {
-        fs.writeFileSync(dbPath, JSON.stringify(data, null, 4));
-    } catch (err) {
-        console.error('Error writing to database:', err);
-    }
-}
 
 module.exports = initEndpoints;
