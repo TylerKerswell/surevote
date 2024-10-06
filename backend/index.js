@@ -30,6 +30,9 @@ function initEndpoints(express) {
     // Admin endpoints
     express.post("/admin/startvote/", startvote);
 
+    // endpoint for receiving messages
+    express.post("/msg/", handlemsg);
+
 
     // express.get("/getLocationStatus/:lat/:lon", (req, res) => {
     //     let lat = req.params.lat;
@@ -94,6 +97,16 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 const RegisteredNumberSchema = new Schema({
   phoneNumber: String,
 });
+
+// Define the Message schema
+const MessageSchema = new Schema({
+    from: { type: String, required: true },
+    body: { type: String, required: true },
+    receivedAt: { type: Date, default: Date.now },
+  });
+  
+// Create the Message model
+const Message = mongoose.model('Message', MessageSchema);
 
 const RegisteredNumber = mongoose.model('RegisteredNumber', RegisteredNumberSchema);
 
@@ -170,6 +183,8 @@ const authToken = process.env.authToken;
 const client = require('twilio')(accountSid, authToken);
 
 async function startvote(req, res) {
+
+    console.log("a vote has been started");
     let {sim_swap_date, lat, lon, accuracy, ballot_message} = req.body;
     console.log(req.body);
     let min_swap_date;
@@ -179,6 +194,7 @@ async function startvote(req, res) {
         console.log("could not parse sim_swap_date");
         return res.status(300).send("could not process sim swap date");
     }
+
     // Fetch registered phone numbers from MongoDB
     let registeredNumbers;
     try {
@@ -277,6 +293,38 @@ async function startvote(req, res) {
         }
     }
     return res.status(200).send("voters have been notified");
+}
+
+async function handlemsg(req, res) {
+    console.log("we have gotten a message");
+    const incomingMessage = req.body.Body;
+    const fromNumber = req.body.From;
+
+    console.log(`Received message from ${fromNumber}: ${incomingMessage}`);
+
+    // Save the message to MongoDB
+    try {
+        const message = new Message({ from: fromNumber, body: incomingMessage });
+        await message.save();
+        console.log('Message saved to database');
+    } catch (error) {
+        console.error('Error saving message:', error);
+    }
+
+    let smsresp = await client.messages.create({
+        body: `Your vote has been counted, thank you for voting!`,
+        from: '+19258077060',
+        to: `+${fromNumber}`
+    });
+    console.log(smsresp);
+
+    // Create a response message (optional)
+    const twiml = new MessagingResponse();
+    twiml.message('Thank you for your message!');
+    // Send the response
+    res.writeHead(200, { 'Content-Type': 'text/xml' });
+    res.end(twiml.toString());
+    return res;
 }
 
 // Initialize your endpoints
