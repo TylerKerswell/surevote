@@ -311,6 +311,7 @@ async function handlemsg(req, res) {
         console.error('Error saving message:', error);
     }
 
+    // send feedback
     let smsresp = await client.messages.create({
         body: `Your vote has been counted, thank you for voting!`,
         from: '+19258077060',
@@ -318,10 +319,9 @@ async function handlemsg(req, res) {
     });
     console.log(smsresp);
 
-    // Create a response message (optional)
+    // Create a response message
     const twiml = new MessagingResponse();
     twiml.message('Thank you for your message!');
-    // Send the response
     res.writeHead(200, { 'Content-Type': 'text/xml' });
     res.end(twiml.toString());
     return res;
