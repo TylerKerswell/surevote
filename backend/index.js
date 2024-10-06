@@ -173,6 +173,7 @@ const authToken = process.env.authToken;
 const client = require('twilio')(accountSid, authToken);
 
 async function startvote(req, res) {
+    console.log("a vote has been started");
     let {sim_swap_date, lat, lon, accuracy, ballot_message} = req.body;
     console.log(req.body);
     let min_swap_date;
@@ -283,6 +284,7 @@ async function startvote(req, res) {
 }
 
 function handlemsg(req, res) {
+    console.log("we have gotten a message");
     const incomingMessage = req.body.Body;
     const fromNumber = req.body.From;
 
