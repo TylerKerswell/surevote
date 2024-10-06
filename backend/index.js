@@ -4,6 +4,7 @@ const path = require('path');
 const serverless = require('serverless-http');
 require('dotenv').config();
 const mongoose = require('mongoose');
+const fetch = require('node-fetch');
 
 // Initialize Express app
 const app = express();

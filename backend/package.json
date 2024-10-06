@@ -1,20 +1,14 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "backend": "file:",
+    "express": "^4.17.1",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.0",
-    "mongoose": "^8.7.0",
-    "twilio": "^5.3.3"
+    "serverless-http": "^2.7.0",
+    "twilio": "^3.75.0",
+    "mongoose": "^6.0.0",
+    "dotenv": "^10.0.0",
+    "node-fetch": "^2.6.7"
   }
 }
