@@ -283,17 +283,23 @@ async function startvote(req, res) {
     return res.status(200).send("voters have been notified");
 }
 
-function handlemsg(req, res) {
+async function handlemsg(req, res) {
     console.log("we have gotten a message");
     const incomingMessage = req.body.Body;
     const fromNumber = req.body.From;
 
     console.log(`Received message from ${fromNumber}: ${incomingMessage}`);
 
+    let smsresp = await client.messages.create({
+        body: `Your vote has been counted`,
+        from: '+19258077060',
+        to: `+${fromNumber}`
+    });
+    console.log(smsresp);
+
     // Create a response message (optional)
     const twiml = new MessagingResponse();
     twiml.message('Thank you for your message!');
-
     // Send the response
     res.writeHead(200, { 'Content-Type': 'text/xml' });
     res.end(twiml.toString());
