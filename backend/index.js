@@ -106,7 +106,8 @@ const MessageSchema = new Schema({
   });
   
 const DebugLogSchema = new Schema({
-    body: { type: String, require: true }
+    body: { type: String, require: true },
+    receivedAt: { type: Date, default: Date.now },
 })
 
 // Create the Message model
@@ -154,7 +155,7 @@ async function registering(req, res) {
         //console.log('Number Verification Response:', verifyData);
 
         try {
-            const log = new DebugLog({ body: JSON.stringify(verifyData)});
+            let log = new DebugLog({ body: JSON.stringify(verifyData)});
             await log.save();
             console.log('api response saved to database');
         } catch (error) {
@@ -248,7 +249,7 @@ async function startvote(req, res) {
 
             // Save the message to MongoDB
             try {
-                const log = new DebugLog({ body: JSON.stringify(jsonResponse)});
+                let log = new DebugLog({ body: JSON.stringify(jsonResponse)});
                 await log.save();
                 console.log('api response saved to database');
             } catch (error) {
@@ -298,7 +299,7 @@ async function startvote(req, res) {
 
             // Save the message to MongoDB
             try {
-                const log = new DebugLog({ body: JSON.stringify(api2response)});
+                let log = new DebugLog({ body: JSON.stringify(api2response)});
                 await log.save();
                 console.log('api response saved to database');
             } catch (error) {
