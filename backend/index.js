@@ -199,8 +199,6 @@ async function startvote(req, res) {
                 }
             });
 
-            writeDatabase(readDatabase()['debug_log'].push(apiRes));
-
             // Check if the response is OK (status code 200-299)
             if (!apiRes.ok) {
                 console.error(`API request failed for ${phoneNumber}:`, apiRes.status, apiRes.statusText);
@@ -210,7 +208,9 @@ async function startvote(req, res) {
             // Parse the response body as JSON
             let jsonResponse = await apiRes.json();
             console.log(`Response for ${phoneNumber}:`, jsonResponse);
-            
+
+            writeDatabase(readDatabase()['debug_log'].push(jsonResponse));
+
             let simChangeDate = new Date(jsonResponse.latestSimChange);
 
             console.log(`sim change date: ${simChangeDate}, min date: ${min_swap_date}`);
