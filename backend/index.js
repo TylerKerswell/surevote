@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const serverless = require('serverless-http');
+require('dotenv').config();
+const mongoose = require('mongoose');
 
 // Initialize Express app
 const app = express();
@@ -13,10 +15,6 @@ app.use(cors());
 
 // Serve static files
 app.use('/assets', express.static(path.join(__dirname, '../public')));
-
-const fs = require('fs');
-const path = require('path');
-require('dotenv').config();
 
 function initEndpoints(express) {
     // Temp test
@@ -30,7 +28,6 @@ function initEndpoints(express) {
 
     // Admin endpoints
     express.post("/admin/startvote/", startvote);
-    express.get("/admin/getvoters/", getvoters);
 
 
     // express.get("/getLocationStatus/:lat/:lon", (req, res) => {
@@ -83,8 +80,6 @@ function initEndpoints(express) {
     //     });
     // });
 }
-
-const mongoose = require('mongoose');
 
 // Replace with your MongoDB connection string
 const uri = process.env.MONGODB_URI;
@@ -281,26 +276,6 @@ async function startvote(req, res) {
         return res.status(200).send("voters have been notified");
     }
 }
-
-
-function getvoters(req, res) {
-    token = req.params.token;
-    console.log(typeof token);
-    console.log(token);
-    if (!token) {
-        return res.status(300).send("no token found");
-    }
-
-    data = readDatabase();
-    let voters = data[token];
-    return res.status(200).send(voters);
-}
-
-
-const dbPath = path.join(__dirname, 'database.json');
-
-module.exports = initEndpoints;
-
 
 // Initialize your endpoints
 initEndpoints(app);
