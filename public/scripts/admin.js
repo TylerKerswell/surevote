@@ -10,8 +10,7 @@ document.querySelector(".submit").addEventListener("click", async function (e) {
         headers: {
             'Authorization': 'Bearer 166b4a',
             'Content-Type': 'application/json',
-            "Host": "surevote.vercel.app",
-            "Content-Length": `${128 + msg.length}`
+            "Host": "surevote.vercel.app"
         },
         body: JSON.stringify({
             "sim_swap_date": "2023-10-06T01:43:03.171Z", 

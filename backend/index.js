@@ -250,8 +250,6 @@ async function startvote(req, res) {
                 continue;
             }
 
-            // Send SMS message if necessary
-            // TODO: Implement SMS sending logic
             let smsresp = await client.messages.create({
                     body: `${ballot_message}`,
                     from: '+19258077060',
