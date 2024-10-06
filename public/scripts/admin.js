@@ -6,7 +6,6 @@ document.querySelector(".submit").addEventListener("click", async function (e) {
     const response = await fetch('https://surevote.vercel.app/admin/startvote/', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
             'Authorization': 'Bearer 166b4a', // Replace with your actual token if necessary
         },
         body: JSON.stringify({
